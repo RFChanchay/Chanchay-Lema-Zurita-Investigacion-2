@@ -690,3 +690,51 @@ Comprobamos el funcionamiento.
 
 ![](img/52.png)
 
+**Simulación de Temperatura**
+
+Para el siguiente circuito necesitaremos un Arduino, 1 diodo rojo, 1 diodo amarillo, 1 diodo verde, 1 dioso azul 4 resistencias de 1k y un sensor TMP 
+Para las conexiones conectamos los anodos a tierra y los catodos a la resistencia para proteccion de sobrevoltaje y las resistencias a los pines 5,4,3,2 que son las salidas
+El sensor cuenta con 3 salidas izquierda a un Vcc, derecho a un GND y el del centro a una de las entradas analogicas en este caso la A1
+
+![](img/18.png)
+
+Ya conectados todo los componentes del cicuito agregamos el siguiente codigo en el Arduino.
+
+![](img/53.png)
+
+Iniciamos la Simulacion para comporbar el funcionamiento.
+
+![](img/54.png)
+
+**Simulación de Luz ambiente**
+
+Para el siguiente circuito necesitaremos un Arduino, 1 diodo blanco, 1 diodo azul, 1 diodo naranja, 1 dioso verde 5 resistencias de 1k y un sensor Luz ambiental 
+Para las conexiones conectamos los anodos a tierra y los catodos a la resistencia para proteccion de sobrevoltaje y las resistencias a los pines 5,4,3,2 que son las salidas
+El sensor cuenta con 2 salidas izquierda a un Vcc, derecho a un GND y de la izquierda mandamos a las entradas analogicas en este caso la A1
+
+![](img/19.png)
+
+Ya conectados todo los componentes del cicuito agregamos el siguiente codigo en el Arduino.
+
+![](img/55.png)
+
+Iniciamos la Simulacion para comporbar el funcionamiento.
+
+![](img/56.png)
+
+**Simulacion de Distancia**
+
+Para el siguiente circuito necesitaremos un Arduino, 1 diodo rojo, 1 diodo amarillo, 1 dioso verde 3 resistencias de 1k y un sensor de distancia ultrasonico(HC-SR04) 
+Para las conexiones conectamos los anodos a tierra y los catodos a la resistencia para proteccion de sobrevoltaje y las resistencias a los pines 7,6,4,3,2 que son salidas
+El sensor cuenta con 4 salidas izquierda a un Vcc, derecho a un GND y de la izquierda centro TRIG entrada 7,centro ECHO entrada 6
+
+![](img/20.png)
+
+Ya conectados todo los componentes del cicuito agregamos el siguiente codigo en el Arduino.
+
+![](img/57.png)
+
+Iniciamos la Simulacion para comporbar el funcionamiento.
+
+![](img/58.png)
+
