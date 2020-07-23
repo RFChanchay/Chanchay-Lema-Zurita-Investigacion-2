@@ -256,7 +256,8 @@ En el siguiente circuito se implemente un sensor de distancia ultrasónico que d
 
 ## 8. Explicacion de codigo fuente
 **Simulación detección de movimiento (PIR)**
-```//declaracion de pines
+```
+//declaracion de pines
 int lrojo=6;//led rojo
 int lverde=5;//led verde
 int pir=2;//pin del sensor pir
@@ -283,7 +284,78 @@ if (lectura==HIGH)//caso de movimiento detectado
 }
 }
 ```
+**Sensor de inclinación SW-200D**
+```
+//Declaracion de variables
+int sensor=3;//PIN 3 SENSOR
+int diodoRojo=2 ;//PIN DEL DIODO ROJO
+int diodoVerde=1;//PIN DEL DIODO VERDE
 
+void setup()
+{
+  //configuracion de pines
+    pinMode(sensor,INPUT);//sensor como entrada
+	pinMode(diodoRojo,OUTPUT);//diodos como salidas
+	pinMode(diodoVerde,OUTPUT);
+}
+
+void loop()
+{
+
+    if (digitalRead(sensor)==LOW)//caso de nivel recto
+	{
+    	digitalWrite(diodoVerde,HIGH);
+    	digitalWrite(diodoRojo,LOW);
+	}else
+	{
+    	digitalWrite(diodoVerde,LOW);// caso de inclinación
+    	digitalWrite(diodoRojo,HIGH);
+	}
+}
+```
+**Simulación detección de gas**
+```
+//DECLARACIÓN DE VARIABLES
+int ledrojo=2;//PIN 2 CORRESPONDIENTE AL LED ROJO
+int ledamarillo=3;//PIN 3 CORRESPONDIENTE AL LED ROJO
+int ledverde=5;//PIN 5 CORRESPONDIENTE AL LED ROJO
+int sensor=A0;//PIN A0 CORRESPONDIENTE AL LED ROJO
+int valor;//VARIABLE DE LECTURA SENSOR
+void setup()
+{
+      //DECLARACION DE SALIDAS
+    pinMode(ledrojo,OUTPUT);
+	pinMode(ledamarillo,OUTPUT);
+	pinMode(ledverde,OUTPUT);
+      //INICIO DE COMUNICACION SERIAL
+    Serial.begin(9600);
+}
+
+void loop()
+{
+
+	valor=analogRead(sensor);//LECTURA DE VALORES ANALOGICOS DEL SENSOR
+	valor=map(valor,300,750,0,100);//ESCALADO DEL SENSOR MEDIANTE MAPEO
+      Serial.println(valor);//IMPRESION DE VALORES EN MONITOR DE COMPUTADOR
+	if (valor<=33.33)//CASO PARA VALORES MENORES DEL %33 DE HUMO
+	{
+    	digitalWrite(ledrojo,LOW);
+    	digitalWrite(ledamarillo,LOW);
+    	digitalWrite(ledverde,HIGH);
+   }else if (valor<=66.66)//CASO PARA VALORES ENTRE %33 Y %66 DE HUMO
+	{
+    	digitalWrite(ledrojo,LOW);
+    	digitalWrite(ledamarillo,HIGH);
+    	digitalWrite(ledverde,LOW);
+	}else//CASO PARA VALORES MAYORE DEL %66 PORCIENTO DE HUMO
+	{
+    	digitalWrite(ledrojo,HIGH);
+    	digitalWrite(ledamarillo,LOW);
+    	digitalWrite(ledverde,LOW);
+	}
+	 
+}
+```
 
 
 
