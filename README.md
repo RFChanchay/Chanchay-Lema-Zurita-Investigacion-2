@@ -452,7 +452,7 @@ void loop()
   }
 }
 ```
-**Simulacion deteccion de distancia **
+**Simulacion deteccion de distancia**
 ```
 long cm = 0;
 
@@ -510,5 +510,114 @@ void loop()
   delay(100);
 }
 ```
+
+## 9. Descripción de Prerrquisitos y configuracion
+
+**Simulación detección de movimiento (PIR)**
+
+Al usar software de TinkerCAD no es necesario realizar ninguna configuración previa de ningún dispositivo lo único que necesitaremos es acceso a internet y cualquier dispositivo donde se nos haga fácil diseñar.
+En caso de implementarlo de manera funcional no debemos configurar el sensor ya que solo enviará señales lógicas en caso de detección de movimiento. 
+
+**Sensor de inclinación SW-200D**
+
+Al usar software de TinkerCAD no es necesario realizar ninguna configuración previa de ningún dispositivo lo único que necesitaremos es acceso a internet y cualquier dispositivo donde se nos haga fácil diseñar.
+En caso de implementarlo de manera funcional no debemos configurar el sensor funciona a manera de interruptor por lo que no necesita polarización.
+
+**Simulación detección de gas**
+
+Al usar software de TinkerCAD no es necesario realizar ninguna configuración previa de ningún dispositivo lo único que necesitaremos es acceso a internet y cualquier dispositivo donde se nos haga fácil diseñar.
+En caso de implementarlo de manera funcional debemos realizar un escalado para el sensor de gas ya que dependiendo de la resistencia que le coloquemos, este nos entregará un valor analogico de voltaje. Esto lo podemos hacer con el Arduino creando un código que lea el pin analogico de entrada y que nos muestre en una computadora mediante la comunicación serial.
+
+**Sensor de temperatura**
+
+Al usar software de TinkerCAD no es necesario realizar ninguna configuración previa de ningún dispositivo lo único que necesitaremos es acceso a internet y cualquier dispositivo donde se nos haga fácil diseñar.En este se tiene en cuanta la formula para los daros que envia el sensor hacia el arduino.
+
+**Sensor de Luz ambiente**
+
+Al usar software de TinkerCAD no es necesario realizar ninguna configuración previa de ningún dispositivo lo único que necesitaremos es acceso a internet y cualquier dispositivo donde se nos haga fácil diseñar.Para este circuito debemos tener en cuenta el usar una resistencia en el sensor para evitar que se funda.
+
+**Sensor de distancia ultrasonico(HS-SR04)**
+
+Al usar software de TinkerCAD no es necesario realizar ninguna configuración previa de ningún dispositivo lo único que necesitaremos es acceso a internet y cualquier dispositivo donde se nos haga fácil diseñar.Para estoy hay que tener en cuenta las 2 lineas de datos del sensor.
+
+## 10. Aportaciones
+**Sensores y Arduino emulados con proteus**
+
+Proteus es un software de simulación de circuitos que cuenta con una gran cantidad de componentes electrónicos a nuestra disposición. Dentro de estos componentes contamos también con distintos sensores que vienen incluidos de manera predeterminada en el programa y podemos agregar más mediante distintas librerías disponibles.
+El simular los circuitos en proteus es distinto a tinkercad ya que normalmente en proteus trabajamos con simbología o diagramas mientras que en tinkercad trabajamos con gráficas físicas de los componentes. Pero la ventaja de proteus es que tenemos formas de conexión más completas ya que incluso podemos modificar características de algunos componentes y la posibilidad de conectar mediante nodos.
+
+![](img/27.png)
+
+A continuación mostraremos cómo poder simular uno de nuestros circuitos mediante proteus.
+Primeramente debemos tener instalado una librería de arduino. Si no disponemos la podemos descargar de internet e instalarla dentro de nuestra carpeta de librerías de proteus.
+
+![](img/28.png)
+
+Una vez con nuestra librería procedemos a realizar nuestra simulación, para este caso realizaremos el sensor de temperatura.
+Primero debemos crear un proyecto con las características que consideremos necesarias. 
+Después debemos buscar todos nuestros componentes mediante el buscador de proteus, este estará identificado con la letra P y buscar los distintos elementos de nuestro circuito.
+Una vez encontrados cada componente debemos seleccionar ok para agregarlos a nuestro entorno de trabajo.
+
+![](img/29.png)
+![](img/30.png)
+
+Requerimos de una alimentación por lo que al usar un sensor lm35 podemos trabajar tranquilamente con una fuente de 5 voltios.
+Para la librería que usamos no es necesario alimentar el arduino.
+Para ubicar en nuestro diagrama cada componente solamente debemos arrastrarlo del cuadro de selección.
+
+![](img/31.png)
+![](img/32.png)
+
+Una vez ubicados nuestros componentes debemos conectarlos, como se mencionó anteriormente no es necesario conectarlos pin con pin ya que también podemos conectarlos mediante nodos.
+
+![](img/33.png)
+
+Para ingresar nuestro código debemos generarlo en la IDE de Arduino ya que cuando este compile generará un archivo .hex que debemos cargar en proteus.
+Este lo podemos ver en el recuadro negro inferior donde necesitaremos la ubicacion del archivo.
+
+![](img/34.png)
+
+Dando click en el arduino de nuestra simulación agregamos la dirección de nuestro programa en program file.
+
+![](img/35.png)
+
+Una vez ya creado el circuito e ingresado el código probamos con el botón play.
+
+![](img/36.png)
+
+## 11. Conclusiones
+Una vez que ya se ha concluido con los proyectos con los diversos sensores que se había propuesto, pudimos notar que sus características son similares en cuanto a  protocolo de programación se refiere, sin embargo existen diferencias en su funcionalidad ya que depende el motivo para el cual estén destinados el comportamiento que los sensores vayan a tomar y también se pueden diferenciar en su complejidad operacional, como claro ejemplo se puede tomar las diferencias de un sensor ultrasónico y un sensor de temperatura los cuales están separados por un nivel de complejidad, siendo el sensor ultrasónico un tanto más complicado debido a el tipo de escala que se debe interpretar.
+ 
+Además con los ejemplos prácticos realizados nos podemos dar una idea de cómo podríamos implementar este tipo de sensores en un uso diario dependiendo de la necesidad que nos aqueja en el día a día.
+
+También con los trabajos realizados tanto de investigación como de práctica pudimos estimar los tipos de sensores que más se debe usar en el mercado debido a su utilidad en el campo de la seguridad y de la prevención, campos en los que se utiliza sensores como el  PIR y el sensor de gas, y campos de la información pública y de investigación donde usan sensores como el de temperatura y el de luz ambiental.
+
+De esta manera finalmente podemos concluir que se ha podido analizar, identificar, estimar y desarrollar las diversas actividades planteadas al inicio de nuestro proyecto.
+
+## 12. Recomendaciones
+ - Debemos tener en cuenta siempre que cuando trabajamos con sensores analogicos realizar un escalado previo con el Arduino para determinar los valores reales que interpretará nuestro Arduino.
+ - En el mercado existen varios tipos de sensores que miden una misma magnitud por lo que depende de nosotros seleccionar el que más se adapte a nuestras necesidades.
+
+## 13. Cronograma
+
+![](img/37.png)
+
+## 14. Bibliografia
+Aditya, Sharma, M., & Gupta, S. C. (2018). An Internet of Things Based Smart Surveillance and Monitoring System using Arduino. Proceedings on 2018 International Conference on Advances in Computing and Communication Engineering, ICACCE 2018, (June 2018), 428–433. https://doi.org/10.1109/ICACCE.2018.8441725
+
+Asha, K. R., Suhada Tasleem, P., Ravi Kumar, A. V., Mallikarjuna Swamy, S., & Rekha, K. R. (2017). Real Time Speed Control of a DC Motor by Temperature Variation Using LabVIEW and Arduino. Proceedings - 2017 International Conference on Recent Advances in Electronics and Communication Technology, ICRAECT 2017, 72–75. https://doi.org/10.1109/ICRAECT.2017.50
+
+Singh, N. A., & Borschbach, M. (2017). Effect of external factors on accuracy of distance measurement using ultrasonic sensors. Proceedings - International Conference on Signals and Systems, ICSigSys 2017, 266–271. https://doi.org/10.1109/ICSIGSYS.2017.7967054
+
+Cristhian Ruiz, (2017), sensor de Luz, Open Lanuza, recopilado de: https://openlanuza.com/senson-de-luz-con-arduino/
+Omar Marcelo Magueño, (2018), Slide Share, recopilado de: https://es.slideshare.net/omarmarcelomagueogor/presentacion-sensores-digitales-y-analogicos
+
+Arduino, Bus de Campo, Curso Iniciación 2018, Sensores y está etiquetada con Arduino, Bus de Campo, Curso Iniciación 2018, DHT, Sensor de Temperatura, Sensores, Sondas en 14 abril, 2018, recopilado de:  https://aprendiendoarduino.wordpress.com/2018/04/14/sensores-arduino-3/#:~:text=Un%20sensor%20es%20un%20dispositivo,y%20transformarlas%20en%20variables%20el%C3%A9ctricas.
+
+Luis Llamas, (2015), MEDIR DISTANCIA CON ARDUINO Y SENSOR DE ULTRASONIDOS HC-SR04, ingniera, informática y diseño, recopilado de: https://www.luisllamas.es/medir-distancia-con-arduino-y-sensor-de-ultrasonidos-hc-sr04/
+
+Luis Llamas (2015), DETECTOR DE MOVIMIENTO CON ARDUINO Y SENSOR PIR, ingeniería, informática y diseño, recopilado de: https://www.luisllamas.es/detector-de-movimiento-con-arduino-y-sensor-pir/#:~:text=Los%20sensores%20infrarrojos%20pasivos%20(PIR,potencia%2C%20y%20f%C3%A1ciles%20de%20usar.&text=Los%20dispositivos%20PIR%20disponen%20de,convertirla%20en%20una%20se%C3%B1al%20el%C3%A9ctrica.
+
+Luis Llamas, (2015), MEDIR INCLINACIÓN CON ARDUINO Y SENSOR TILT SW-520D, ingeniería, informática y diseño, recopilado de: https://www.luisllamas.es/medir-inclinacion-con-arduino-y-sensor-tilt-sw-520d/#:~:text=Un%20sensor%20de%20inclinaci%C3%B3n%20es,partir%20de%20una%20cierta%20inclinaci%C3%B3n.
 
 
