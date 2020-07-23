@@ -229,10 +229,60 @@ En el siguiente circuito se implemente un sensor de distancia ultrasónico que d
 - 1 Arduino UNO
 - 3 Resistencias 1k
 
+## 7. Mapa de Variables
+**Simulación detección de movimiento (PIR)**
 
+![](img/21.png)
 
+**Simulación detección de inclinación con sensor SW-200D **
 
+![](img/22.png)
 
+**Simulación detección de gas**
+
+![](img/23.png)
+
+**Simulacion detección de Temperatura**
+
+![](img/24.png)
+
+**Simulacion detección de luz de ambiente**
+
+![](img/25.png)
+
+**Simulacion detección de distancia**
+
+![](img/26.png)
+
+## 8. Explicacion de codigo fuente
+**Simulación detección de movimiento (PIR)**
+```//declaracion de pines
+int lrojo=6;//led rojo
+int lverde=5;//led verde
+int pir=2;//pin del sensor pir
+int lectura;//variable para leer el sensor
+
+void setup()
+{
+	pinMode(lrojo,OUTPUT);
+	pinMode(lverde,OUTPUT);
+	pinMode(pir,INPUT);
+}
+
+void loop()
+{
+lectura=digitalRead(pir);//lectura del sensor
+if (lectura==HIGH)//caso de movimiento detectado
+{
+	digitalWrite(lrojo,HIGH);
+	digitalWrite(lverde,LOW);
+}else//caso de no deteccion de movimiento
+{
+	digitalWrite(lrojo,LOW);
+	digitalWrite(lverde,HIGH);
+}
+}
+```
 
 
 
