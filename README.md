@@ -25,7 +25,7 @@ En lo que respecta a nuestro Investigación cada una de estas investigaciones ti
  ## 4. Marco Teórico
  Para poder entender con precisión el tema de  los sensores de Arduino existe un apartado teórico el cual nos servirá como guía y base para proceder con los diferentes proyectos que se desee realizar.
  
- **¿Qué es un sensor compatible con Arduino? **
+**¿Qué es un sensor compatible con Arduino?**
  
 Un sensor es un dispositivo capaz de detectar magnitudes físicas o químicas, llamadas variables de instrumentación, y transformarlas en variables eléctricas.
 
