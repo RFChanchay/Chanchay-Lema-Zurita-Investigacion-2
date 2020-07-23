@@ -129,6 +129,7 @@ De esta manera podemos adecuar los valores de entrada analógica a los que realm
 
 ## 5.Diagramas
 **Sensor PIR**
+
 Para el siguiente sensor simularemos un circuito que en el momento que detecte movimiento a su alrededor encienda un led de color rojo que indique alerta, pero si no detecta movimiento pues se encendera un led de color verde.
 El circuito contará con un sensor PIR  555-28027 el cual trabaja con las siguientes señales:
 
@@ -141,12 +142,14 @@ El pin de la derecha es para GND.
 ![](img/14.png)
 
 **Sensor de Inclinacion**
+
 Simularemos un circuito que determine cuándo una superficie está inclinada en caso de estar inclinada se encenderá un led rojo, en caso de estar nivelada se encenderá un led verde.
 El sensor a usar es el SW200D que funciona a manera de interruptor es decir se cierra o se abre dependiendo de la inclinación del sensor.
 
 ![](img/15.png)
 
 **Sensor de Gas**
+
 En el siguiente circuito simularemos un detector de gas donde se tendra 3 niveles de peligro segun el nivel de gas en el ambiente, donde el encendido de un diodo rojo signifique peligro, amarillo alerta o precaucion y verde calma. Para este circuito se usará el sensor de gas predeterminado por tinkercad de 6 pines.
 
 ![](img/16.png)
@@ -156,12 +159,14 @@ El circuito cuenta con 3 salidas correspondientes a los diodos y una entrada cor
 ![](img/17.png)
 
 **Sensor de temperatura**
+
 En el siguiente circuito se implemente un sensor de temperatura que va a encender cada led dependiendo de la temperatura que que detecte el sensor para c°<=15 Led azul, c°>=16 y c°<=29 Led verde, c°>=30 y c°<=49 Led amarillo, c°>=50 Led rojo
 los valores ingresaran desde el sensor al arduino por la entrada analogica A1.
 
 ![](img/18.png)
 
 **Sensor de Luz de ambiente**
+
 En el siguiente circuito se implemente un sensor de luz ambiente
 que va a encender cada led dependiendo de la temperatura que que detecte el sensor para menor a val<=600 Led verde, val>=601 y val<=799 Led amarillo, val>=800 y val<=999 Led azul, val>=1000 Led blanco
 los valores ingresarán desde el sensor al arduino por la entrada analogica A1.
@@ -169,9 +174,68 @@ los valores ingresarán desde el sensor al arduino por la entrada analogica A1.
 ![](img/19.png)
 
 **Sensor de Distancia(HC-SR04)**
+
 En el siguiente circuito se implemente un sensor de distancia ultrasónico que dependiendo a la distancia que se encuentre el objetivo se irán encendiendo o apagando los leds
 
 ![](img/20.png)
+
+## 6. Lista de Componentes
+### Simulación detección de movimiento (PIR)
+- 1 Sensor PIR 555-28027
+- 1 Diodo rojo
+- 1 Diodo verde
+- 1 Arduino UNO
+
+### Simulación detección de inclinación con sensor SW-200D
+- 1 Sensor SW-200D
+- 1 Diodo rojo
+- 1 Diodo verde
+- 1 Arduino UNO
+- 3 Resistencias 1k
+
+### Simulación detección de gas 
+- 1 Sensor de gas
+- 1 Diodo rojo
+- 1 Diodo amarillo
+- 1 Diodo verde
+- 1 Arduino UNO
+- 3 Resistencias 1k
+- 1 Resistencia de 4.7k
+
+### Simulación detección de temperatura
+- 1 Sensor de temperatura
+- 1 Diodo rojo
+- 1 Diodo amarillo
+- 1 Diodo verde
+- 1 Diodo azul
+- 1 Arduino UNO
+- 4 Resistencias 1k
+
+### Simulación detección de Luz de ambiente
+- 1 Sensor de luz ambiente
+- 1 Diodo blanco
+- 1 Diodo azul
+- 1 Diodo naranja
+- 1 Diodo verde
+- 1 Arduino UNO
+- 5 Resistencias 1k
+
+### Simulación detección de distancia ultrasonica
+- 1 Sensor de distancia ultrasonico(HS-SR04)
+- 1 Diodo rojo
+- 1 Diodo amarillo
+- 1 Diodo verde
+- 1 Diodo azul
+- 1 Arduino UNO
+- 3 Resistencias 1k
+
+
+
+
+
+
+
+
 
 
 
