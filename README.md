@@ -620,4 +620,73 @@ Luis Llamas (2015), DETECTOR DE MOVIMIENTO CON ARDUINO Y SENSOR PIR, ingeniería
 
 Luis Llamas, (2015), MEDIR INCLINACIÓN CON ARDUINO Y SENSOR TILT SW-520D, ingeniería, informática y diseño, recopilado de: https://www.luisllamas.es/medir-inclinacion-con-arduino-y-sensor-tilt-sw-520d/#:~:text=Un%20sensor%20de%20inclinaci%C3%B3n%20es,partir%20de%20una%20cierta%20inclinaci%C3%B3n.
 
+## 15. Anexos
+Manuales de usuario
+
+**Sensor PIR**
+
+Para el siguiente circuito necesitaremos un Arduino, 1 diodo rojo, 1 diodo verde, 2 resistencias de 1k y un sensor PIR
+
+![](img/38.png)
+
+Para la conexión de los diodos conectamos el cátodo a tierra y el ánodo con la resistencia de 1k para protegerlos del sobrevoltaje y las resistencias a los pines 5 y 6 que van a ser nuestras salidas.
+
+![](img/39.png)
+
+El sensor contará con 3 pines los cuales conectaremos el izquierdo al pin 2 de nuestro Arduino, el del medio a Vcc y el derecho a GND.
+
+![](img/40.png)
+
+Una vez conectados nuestros componentes, debemos agregar el siguiente código en nuestro Arduino.
+
+![](img/41.png)
+
+Comprobamos el funcionamiento.
+
+![](img/42.png)
+
+**Sensor de inclinación**
+
+Para el siguiente circuito necesitaremos un Arduino, 1 diodo rojo, 1 diodo verde, 3 resistencias de 1k y un sensor SW-200D
+
+![](img/43.png)
+
+Para la conexión de los diodos conectamos el cátodo a tierra y el ánodo con la resistencia de 1k para protegerlos del sobrevoltaje y las resistencias a los pines 1 y 2 que van a ser nuestras salidas.
+
+![](img/44.png)
+
+El sensor funciona como interruptor, cuando se inclina se cerrará y cuando se encuentra estable se abre, por lo que debemos conectar el sensor con una resistencia de tal forma que envíe una señal digital que pueda ser interpretada por nuestro arduino.
+
+![](img/45.png)
+
+Copiamos el siguiente código en nuestro Arduino.
+
+![](img/46.png)
+
+Comprobamos el funcionamiento del circuito.
+
+![](img/47.png)
+
+**Simulación deteccion de gas**
+
+Para el siguiente circuito necesitaremos un Arduino, 1 diodo rojo, 1 diodo amarillo, 1 diodo verde, 3 resistencias de 1k, una resistencia de 4.7k y un sensor de gas.
+
+![](img/48.png)
+
+Para la conexión de los diodos conectamos el cátodo a tierra y el ánodo con la resistencia de 1k para protegerlos del sobrevoltaje y las resistencias a los pines 2 para el rojo, 3 para el amarillo y 5 para el verde que van a ser nuestras salidas.
+
+![](img/49.png)
+
+Al sensor primero deberemos realizar un escalado, esto lo podemos realizar fácilmente con el Arduino mediante un código que lea los valores analogicos que el sensor envía al Arduino y este a su vez mediante la comunicación serial los imprima en pantalla, y mediante distintas pruebas determinemos rangos de operación.
+
+![](img/50.png)
+
+Cabe aclarar que los valores que envíe nuestro sensor depende también de la resistencia que le estemos conectando para el caso de una resistencia de 4.7k envía valores entre 300 y 750 por lo que en base a esos valores debemos escalar nuestro programa.
+Para la conexión del sensor debemos conectar los pines superiores a VCC y los inferiores a: el de la izquierda a nuestro arduino, el de centro a GND y el de la derecha a una resistencia y de la resistencia a GND.
+
+![](img/51.png)
+
+Comprobamos el funcionamiento.
+
+![](img/52.png)
 
