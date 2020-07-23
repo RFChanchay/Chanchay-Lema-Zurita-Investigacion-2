@@ -234,7 +234,7 @@ En el siguiente circuito se implemente un sensor de distancia ultrasónico que d
 
 ![](img/21.png)
 
-**Simulación detección de inclinación con sensor SW-200D **
+**Simulación detección de inclinación con sensor SW-200D**
 
 ![](img/22.png)
 
