@@ -356,12 +356,159 @@ void loop()
 	 
 }
 ```
+**Simulacion deteccion de temperatura**
+```
+int val=0;
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  val= analogRead(1);
+  float c=(val-102)/2;
+  Serial.print("temp");
+  delay(100);
+    
+  if(c<=15){
+    
+    digitalWrite(5,HIGH);
+  
+  }else {
+    digitalWrite(5,LOW);
+  }
+  
+  if(c>=16&&c<=29){
+    
+    digitalWrite(4,HIGH);
+  
+  }else {
+    digitalWrite(4,LOW);
+  }
+  
+  if(c>=30&&c<=49){
+    
+    digitalWrite(3,HIGH);
+  
+  }else {
+    digitalWrite(3,LOW);
+  }
+  
+  if(c>=50){
+    
+    digitalWrite(2,HIGH);
+  
+  }else {
+    digitalWrite(2,LOW);
+  }
+  
+}
+```
+**Simulacion deteccion luz ambiental**
+```
+int val=0;
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  val= analogRead(1);
+  Serial.print(val);
+  delay(100);
+  
+  if(val<=600){
+    
+    digitalWrite(5,HIGH);
+  
+  }else {
+    digitalWrite(5,LOW);
+  }
+  
+  if(val>=601&&val<=799){
+    
+    digitalWrite(4,HIGH);
+  
+  }else {
+    digitalWrite(4,LOW);
+  }
+  
+  if(val>=800&&val<=999){
+    
+    digitalWrite(3,HIGH);
+  
+  }else {
+    digitalWrite(3,LOW);
+  }
+  
+  if(val>=1000){
+    
+    digitalWrite(2,HIGH);
+  
+  }else {
+    digitalWrite(2,LOW);
+  }
+}
+```
+**Simulacion deteccion de distancia **
+```
+long cm = 0;
+
+long readUltrasonicDistance(int triggerPin, int echoPin)
+{
+  pinMode(triggerPin, OUTPUT);
+  digitalWrite(triggerPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(triggerPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(triggerPin, LOW);
+  pinMode(echoPin, INPUT);
+  return (pulseIn(echoPin, HIGH)*0.01723);
+  
+}
+
+void setup()
+{
+  Serial.begin(9600);
+
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+}
+
+void loop()
+{
+  cm =readUltrasonicDistance(7, 6);
+
+  Serial.print(cm);
+  Serial.println("cm");
+  
+  if (cm > 250) {
+    digitalWrite(2,LOW);
+    digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
+  }
+  if (cm <= 250 && cm > 175) {
+    digitalWrite(2,HIGH);
+    digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
+  }
+  if (cm <= 175 && cm > 100) {
+    digitalWrite(2,HIGH);
+    digitalWrite(3,HIGH);
+    digitalWrite(4,LOW);
+  }
+  if (cm <= 100) {
+    digitalWrite(2,HIGH);
+    digitalWrite(3,HIGH);
+    digitalWrite(4,HIGH);
+  }
 
 
-
-
-
-
-
+  delay(100);
+}
+```
 
 
